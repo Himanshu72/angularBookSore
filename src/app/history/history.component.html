@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="text-center">
+    <h4><b>Your Past Buy</b></h4>
+    </div>
+    <div class="alert alert-danger text-center" *ngIf="this.book.isBuyEmpty()">
+         You had not Buy any book yet 
+    </div>
+<table class="table"  *ngIf="!this.book.isBuyEmpty()">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">ItemName</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of this.book.getAllBuy();let i=index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{item.book}}</td>
+                    <td>{{item.Date | date:'d/M/y'}}</td>
+                    <td>{{item.QTY}}</td>
+                    <td>{{item.price |currency:'INR'}} </td>
+                  </tr>
+                  <tr>
+                        <tr>
+                                <th scope="row">*</th>
+                                <td><i>All Books you Buyed</i></td>
+                                <td>Till Now</td>
+                                <td>{{this.book.getBuyQTY()}}</td>
+                                <td>{{this.book.getBuyPrice() | currency:'INR' }}</td>        
+                                     
+                        </tr>
+                   
+                </tbody>
+              </table>
+
+</div>

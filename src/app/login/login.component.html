@@ -1,0 +1,35 @@
+<!-- Default form login -->
+
+<div class="alert alert-danger text-center" *ngIf="loginfail" >Something went wrong</div>
+<form class="text-center border border-light p-5" action="#!">
+
+    <p class="h4 mb-4">Log in </p>
+
+    <!-- Email -->
+    <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" name="user" [(ngModel)]="user" placeholder="E-mail">
+    
+    <!-- Password -->
+    <input type="password" id="defaultLoginFormPassword" name="pass" [(ngModel)]="pass"class="form-control mb-4" placeholder="Password">
+
+    <div class="d-flex justify-content-around">
+        <div>
+            <!-- Remember me -->
+                    </div>
+        <div>
+            
+        </div>
+    </div>
+
+    <!-- Sign in button -->
+    <button class="btn btn-info btn-block my-4"  (click)="login()"  type="submit">Sign in</button>
+
+    <!-- Register -->
+    <p>Not a member?
+        <a [routerLink]="['/register']">Register</a>
+    </p>
+
+    <!-- Social login -->
+   
+
+</form>
+<!-- Default form login -->

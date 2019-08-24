@@ -1,0 +1,53 @@
+<!-- Search form -->
+<!-- Card deck -->
+<div class="row">
+<div class="col-md-4" *ngFor="let item of this.books.getAllBooks();let i=index" >
+
+    <!-- Card -->
+    <div class="card">
+  
+      <!--Card image-->
+      <div class="view overlay">
+        <img class="card-img-top" src="../../assets/books/{{item.img}}" alt="Card image cap">
+        <a>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+  
+      <!--Card content-->
+      <div class="card-body">
+  
+        <!--Title-->
+        <h4 class="card-title">{{item.title}}</h4>
+        <h5 class="text-primary">{{item.price | currency:'INR' }}</h5>
+        <!--Text-->
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+        <div class="row">
+        <div class="col-4 text-right" >
+            <button type="button"  (click)="cart(item.id)" class="btn btn-sm btn-warning btn-md">Cart</button>
+         
+        </div>        
+        <div class="col-8" >
+          
+            
+          <div class="def-number-input number-input safari_only" style="margin-top:5px; ">
+                <button  class="minus" (click)="minus(item.id)" ></button>
+                <input class="quantity" min="0" name="quantity" value={{qty[i]}} type="number">
+                <button  class="plus" (click)="add(item.id)" ></button>
+              </div>
+            </div>
+          
+      </div>
+      </div>
+  
+    </div>
+    <!-- Card -->
+  
+  
+   
+    <!-- Card -->
+  
+  </div>
+  </div>
+  <!-- Card deck -->
